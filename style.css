@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global Styles */
+.dFlex {
+  display: flex;
+  flex-direction: column;
+}
+
+.flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Application Styles */
+body {
+  background-color: #DACDC9 !important;
+  color: #1E1411;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.shareCard {
+  background-color: #EDE9E2;
+  box-shadow: 8px 8px 8px #a1918c;
+  border-radius: 30px;
+  gap: 20px;
+  padding: 52px 64px;
+  width: 90%;
+  max-width: 640px;
+  transition: padding .25s;
+}
+
+.shareCard .titleCard {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.shareChallengeContainer .quickShareContainer {
+  flex-direction: row; 
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.quickShareContainer .iconContainer {
+  background-color: #D9D9D9;
+  border: 3px solid #D9D9D9;
+  cursor: pointer;
+  border-radius: 100%;
+  height: 60px;
+  width: 60px;
+  transition: border .25s;
+}
+.quickShareContainer .iconContainer:hover { border: 3px solid #1E1411; }
+.iconContainer svg {
+  height: 26px;
+  width: 26px;
+}
+
+.shareChallengeContainer .copyLinkContainer { margin-top: 16px; }
+
+.copyLinkContainer .title {
+  font-size: .93rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.copyLinkContainer .linkContainer { 
+  background-color: #D9D9D9;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 8px;
+  font-size: .86rem;
+  height: 42px;
+}
+
+.linkContainer .link {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-wrap: nowrap;
+  padding-left: 16px;
+  padding-right: 8px;
+}
+
+.linkContainer .btnCopyLink {
+  background-color: transparent;
+  border: 3px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  height: 100%;
+  min-width: 70px;
+  transition: border .25s;
+}
+.linkContainer .btnCopyLink:hover { border: 3px solid #1E1411; }
+
+@media (max-width: 640px) {
+  .shareCard { padding: 26px 16px; }
+}
