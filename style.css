@@ -1,114 +1,120 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
+:root {
+  --bg-color: #DACDC9;
+  --text-color: #1E1411;
+  --primary-color: #EDE9E2;
+  --secondary-color: #D9D9D9;
+}
+
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
-}
-
-/* Global Styles */
-.dFlex {
-  display: flex;
-  flex-direction: column;
-}
-
-.flexCenter {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Application Styles */
-body {
-  background-color: #DACDC9 !important;
-  color: #1E1411;
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
 }
 
-.wrapper {
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* Feedback cards */
+.feedbackCard {
+  background-color: #fff;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, .25);
+  border-bottom: 3px solid transparent;
+  border-radius: 12px;
+  position: absolute;
+  top: 20px;
+  right: -100%;
+  height: 46px;
+  width: fit-content;
+  min-width: 130px;
+}
+
+/* Apllication */
+.wrapper { 
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100vh; 
 }
 
 .shareCard {
-  background-color: #EDE9E2;
-  box-shadow: 8px 8px 8px #a1918c;
+  background-color: var(--primary-color);
+  box-shadow: 8px 8px 2px rgba(0, 0, 0, .15);
   border-radius: 30px;
-  gap: 20px;
   padding: 52px 64px;
   width: 90%;
   max-width: 640px;
-  transition: padding .25s;
 }
 
-.shareCard .titleCard {
-  font-size: 1.3rem;
+.shareCard .cardTitle {
+  font-size: 1.36rem;
   font-weight: 700;
+  margin-bottom: 20px;
 }
 
-.shareChallengeContainer .quickShareContainer {
-  flex-direction: row; 
+.shareCard .quickShareContainer,
+.quickShareContainer .iconContainer { display: flex; }
+
+.shareCard .quickShareContainer {
+  gap: 16px;
   justify-content: space-between;
   align-items: center;
+  flex: 1;
   flex-wrap: wrap;
-  gap: 8px;
 }
-
 .quickShareContainer .iconContainer {
-  background-color: #D9D9D9;
-  border: 3px solid #D9D9D9;
-  cursor: pointer;
+  background-color: var(--secondary-color);
+  border: 3px solid transparent;
   border-radius: 100%;
-  height: 60px;
-  width: 60px;
-  transition: border .25s;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  aspect-ratio: 1/1;
+  min-width: 52px;
+  max-width: 64px;
+  transition: border-color .25s;
 }
-.quickShareContainer .iconContainer:hover { border: 3px solid #1E1411; }
-.iconContainer svg {
+.quickShareContainer .iconContainer:hover { border-color: var(--text-color); }
+.iconContainer .bi {
   height: 26px;
   width: 26px;
 }
 
-.shareChallengeContainer .copyLinkContainer { margin-top: 16px; }
+.shareCard .copyLinkContainer { margin-top: 16px; }
 
-.copyLinkContainer .title {
-  font-size: .93rem;
+.copyLinkContainer .copyLinkLabel {
   font-weight: 600;
   margin-bottom: 12px;
 }
-
-.copyLinkContainer .linkContainer { 
-  background-color: #D9D9D9;
-  flex-direction: row;
-  align-items: center;
+.copyLinkContainer .copyLinkInput {
+  background-color: var(--secondary-color);
   border-radius: 8px;
-  font-size: .86rem;
+  display: flex;
+  align-items: center;
   height: 42px;
 }
-
-.linkContainer .link {
+.copyLinkInput .linkText { 
+  flex: 1;
   overflow: hidden;
   text-overflow: ellipsis;
-  text-wrap: nowrap;
-  padding-left: 16px;
-  padding-right: 8px;
+  text-wrap: nowrap; 
+  padding: 0 12px;
 }
-
-.linkContainer .btnCopyLink {
+.copyLinkInput .btnCopy {
   background-color: transparent;
   border: 3px solid transparent;
-  border-radius: 8px;
+  border-radius: inherit;
   cursor: pointer;
   font-weight: 600;
   height: 100%;
-  min-width: 70px;
-  transition: border .25s;
+  min-width: 80px;
+  transition: border-color .25s;
 }
-.linkContainer .btnCopyLink:hover { border: 3px solid #1E1411; }
-
-@media (max-width: 640px) {
-  .shareCard { padding: 26px 16px; }
-}
+.copyLinkInput .btnCopy:hover { border-color: var(--text-color); }
