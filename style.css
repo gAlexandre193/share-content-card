@@ -82,7 +82,7 @@ body {
   transition: border-color .25s;
 }
 .quickShareContainer .iconContainer:hover { border-color: var(--text-color); }
-.iconContainer .bi {
+.iconContainer .icon {
   height: 26px;
   width: 26px;
 }
